@@ -60,7 +60,7 @@ After installation, the project structure will look like this:
 
 ![image](https://github.com/user-attachments/assets/17ccc8df-179f-4a02-8c22-add6885e16cf)
 
-### 🧪 Running the tests
+## 🧪 Running the tests
 
 - Interactive Mode:
   
@@ -77,4 +77,32 @@ To run the tests in headless mode (without a graphical interface), use the comma
 ```bash
 npx cypress run
 ```
+The test results will be displayed on the terminal.
+
+## 📊 Test Report
+
+Test reports are automatically generated using the Mochawesome plugin. They are saved in the cypress/reports folder.
+
+- HTML report: cypress/reports/mochawesome.html
+
+- JSON report: cypress/reports/mochawesome.json
+
+To view the HTML report, open the mochawesome.html file in your browser.
+
+## 🧩 Test Scenarios
+- Frontend Testing (E2E):
+  
+**Login (login.cy.js)**: Checks the login flow with valid and invalid credentials.
+
+**Register (register.cy.js)**: Checks the registration flow of new users.
+
+
+- API Tests:
+  
+**POST /login (login.cy.js)**: Tests the login endpoint with different scenarios.
+
+**POST /usuarios (register.cy.js)**: Tests the user registration endpoint.
+
+
+*For more details, see the test files in the cypress/tests/e2e and cypress/tests/api folder.*
 
