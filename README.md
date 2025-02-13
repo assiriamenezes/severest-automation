@@ -53,3 +53,28 @@ Make sure you have **Node.js** installed. You can download it from [here](https:
 ```bash
   npm install --save-dev mochawesome
 ```
+
+### Project Structure
+
+After installation, the project structure will look like this:
+
+![image](https://github.com/user-attachments/assets/17ccc8df-179f-4a02-8c22-add6885e16cf)
+
+### 🧪 Running the tests
+
+- Interactive Mode:
+  
+To run the tests in interactive mode (with a graphical interface), use the command:
+
+```bash
+npx cypress open
+```
+
+- Headless Mode:
+
+To run the tests in headless mode (without a graphical interface), use the command:
+
+```bash
+npx cypress run
+```
+
