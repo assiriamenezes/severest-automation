@@ -3,14 +3,16 @@ describe('Register', () => {
     beforeEach(() => {
         
         cy.visit('/cadastrarusuarios');
+        const number = Math.floor(Math.random() * 1000);
+        Cypress.env('email', `fulano.silva${number}@example.com`);
+
       });
 
     it('Scenario 1: Successful registration without admin', () => {
 
         cy.get('#nome').type('Fulano da Silva'); 
-        cy.get('#email').type('fulano.silvaaa@example.com'); 
-        cy.get('#password').type('SenhaSegura123'); 
-  
+        cy.get('#email').type(Cypress.env('email')); 
+        cy.get('#password').type('Teste'); 
         cy.get('button[type="submit"]').click();
   
         cy.contains('Cadastro realizado com sucesso').should('be.visible');
@@ -20,8 +22,8 @@ describe('Register', () => {
     it('Scenario 2: Successful registration with admin', () => {
     
         cy.get('#nome').type('Fulano da Silva'); 
-        cy.get('#email').type('admin.silva@example.com'); 
-        cy.get('#password').type('SenhaSegura123'); 
+        cy.get('#email').type(Cypress.env('email')); 
+        cy.get('#password').type('Teste'); 
         cy.get('input[name="administrador"]').check();
         cy.get('button[type="submit"]').click();
     
@@ -31,8 +33,8 @@ describe('Register', () => {
 
     it('Scenario 3: Register account with Name blank field', () => {
     
-        cy.get('#email').type('joao.silva@example.com');
-        cy.get('#password').type('Senha123@');
+        cy.get('#email').type(Cypress.env('email')); 
+        cy.get('#password').type('Teste');
         cy.get('button[type="submit"]').click();
     
         cy.contains('Nome é obrigatório').should('be.visible');
@@ -43,7 +45,7 @@ describe('Register', () => {
     it('Scenario 4: Register account with Password blank field', () => {
     
         cy.get('#nome').type('Fulano da Silva');
-        cy.get('#email').type('joao.silva@example.com');
+        cy.get('#email').type(Cypress.env('email')); 
         cy.get('button[type="submit"]').click();
     
         cy.contains('Password é obrigatório').should('be.visible');
