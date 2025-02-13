@@ -106,3 +106,11 @@ To view the HTML report, open the mochawesome.html file in your browser.
 
 *For more details, see the test files in the cypress/tests/e2e and cypress/tests/api folder.*
 
+## 📧 Contact
+If you have questions or suggestions, please contact:
+
+Assíria Menezes
+
+- GitHub: @assiriamenezes
+
+- Email: assiriasmenezes@gmail.com
