@@ -1,7 +1,12 @@
 describe('Login', () => {
     
-    it('Scenario 1: Login with valid credentials', () => {
+    beforeEach(() => {
+      
       cy.visit('/login');
+    });
+
+    it('Scenario 1: Login with valid credentials', () => {
+
       cy.get('#email').type('fulano@qa.com');
       cy.get('#password').type('teste');
       cy.get('button[type="submit"]').click();
@@ -9,14 +14,14 @@ describe('Login', () => {
     });
 
     it('Scenario 2: Login with blank obrigatory fields ', () => {
-      cy.visit('/login');
+
       cy.get('button[type="submit"]').click();
       cy.contains('Email é obrigatório').should('be.visible'); 
       cy.contains('Password é obrigatório').should('be.visible');
       });
 
     it('Scenario 3: Login with credentials invalid (password)', () => {
-      cy.visit('/login');
+
       cy.get('#email').type('fulano@qa.com');
       cy.get('#password').type('eee');
       cy.get('button[type="submit"]').click();
@@ -24,7 +29,7 @@ describe('Login', () => {
       });
 
     it('Scenario 4: Login with credentials invalid (e-mail)', () => {
-      cy.visit('/login');
+
       cy.get('#email').type('incorrect@qa.com');
       cy.get('#password').type('teste');
       cy.get('button[type="submit"]').click();
@@ -32,16 +37,17 @@ describe('Login', () => {
       });    
 
     it('Scenario 5: Access Register page', () => {
-      cy.visit('/login');
+
       cy.contains('Cadastre-se').click();
       cy.url().should('include', '/cadastrarusuarios'); 
       cy.contains('Cadastro').should('be.visible');
       });
 
     it('Scenario 6: Access Login page', () => {
-        cy.visit('/login');
-        cy.contains('Login');
-        cy.url().should('include', '/login'); 
-        cy.contains('Login').should('be.visible');
-        });
+
+      cy.contains('Login');
+      cy.url().should('include', '/login'); 
+      cy.contains('Login').should('be.visible');
+      });
+     
   });
