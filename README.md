@@ -67,6 +67,7 @@ After installation, the project structure will look like this:
 To run the tests in interactive mode (with a graphical interface), use the command:
 
 ```bash
+cd project
 npx cypress open
 ```
 
@@ -75,6 +76,7 @@ npx cypress open
 To run the tests in headless mode (without a graphical interface), use the command:
 
 ```bash
+cd project
 npx cypress run
 ```
 The test results will be displayed on the terminal.
